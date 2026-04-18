@@ -14,7 +14,7 @@ const basename = '/yacht-spa/'
 function Navbar() {
   const loc = useLocation()
 
-  // 🔹 Функция стилей
+  // 🔹 Функция стилей — одинаковая для всех кнопок
   const btn = (path) => ({
     padding: '8px 16px',
     borderRadius: '6px',
@@ -38,16 +38,12 @@ function Navbar() {
         </Link>
         <div className="ms-auto d-flex gap-2">
           {/* Home */}
-          <Link to="/" className={btn('/')}>
+          <Link to="/" style={btn('/')}>
             Home
           </Link>
 
-          {/* ✅ Contact — теперь через Link, без target="_blank" */}
-          <Link
-            to="/contact"
-            className={btn('/contact').className}
-            style={btn('/contact')}
-          >
+          {/* ✅ Contact — теперь точно такие же стили, как у Home */}
+          <Link to="/contact" style={btn('/contact')}>
             Contact
           </Link>
         </div>
