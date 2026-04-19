@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // base: '/yacht-spa/',  // ← закомментируй для Netlify
+  base: '/yacht-spa-netlify/', // ← раскомментировали и поменяли имя
 })
