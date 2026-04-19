@@ -278,15 +278,20 @@ export default function HomePage() {
         {/* 👉 Правая колонка: основной контент */}
         <div className="col-lg-9 col-md-8">
           <div className="text-center mb-5">
+            {/* ✅ НОВЫЙ КОД — вставь вместо старого */}
             <img
               className="rounded-img mb-3"
               src={`${import.meta.env.BASE_URL}yacht-face.jpg`}
               alt="Portrait"
               style={{
                 width: '100%',
-                maxWidth: '280px',
-                borderRadius: '50%',
+                maxWidth: '276px', // ← уменьшили с 280px (~1 мм)
+                height: '274px', // ← чуть меньше по вертикали = лёгкое «сплющивание»
+                borderRadius: '50%', // ← теперь эллипс, а не идеальный круг
                 boxShadow: '0 0 10px rgba(0,0,0,0.4)',
+                objectFit: 'cover', // ← чтобы фото красиво заполнило форму без искажений
+                display: 'block', // ← убирает микро-отступ снизу
+                margin: '0 auto', // ← идеальное центрирование
               }}
             />
             <h1 className="fw-light">Hello Yacht Buyers</h1>

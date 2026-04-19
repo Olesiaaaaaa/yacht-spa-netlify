@@ -8,8 +8,7 @@ import {
 import HomePage from './pages/HomePage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 
-// 🔹 Базовый путь для GitHub Pages
-const basename = '/yacht-spa/'
+// 🔹 Для Netlify basename НЕ НУЖЕН — сайт работает на корне домена
 
 function Navbar() {
   const loc = useLocation()
@@ -42,7 +41,7 @@ function Navbar() {
             Home
           </Link>
 
-          {/* ✅ Contact — теперь точно такие же стили, как у Home */}
+          {/* Contact — такие же стили, как у Home */}
           <Link to="/contact" style={btn('/contact')}>
             Contact
           </Link>
@@ -54,7 +53,8 @@ function Navbar() {
 
 export default function App() {
   return (
-    <BrowserRouter basename={basename}>
+    // 🔹 Убрали basename — для Netlify сайт на корне домена
+    <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
